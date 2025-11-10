@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Exercícios – JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<link rel="stylesheet" href="./styles.css">
+<script src="./scritps.js"></script>
+
+
+</head>
+<body>
+
+<header>
+  <h1>Lista de Exercícios – JavaScript</h1>
+  <p>Disciplina: Desenvolvimento Web | Conteúdo: Decisão, Repetição e Arrays</p>
+  <div class="top-actions">
+    <button id="btnTema" class="btn" type="button">🌙 Modo escuro</button>
+    <button id="btnInstrucoes" class="btn" type="button">📌 Recolher instruções</button>
+    <button id="btnLimparProgresso" class="btn" type="button">♻️ Limpar progresso</button>
+  </div>
+</header>
+
+<main>
+  <h2>Instruções</h2>
+  <div class="instrucoes" id="boxInstrucoes">
+    <p>
+      1. Salve este arquivo em seu computador como <strong>lista-exercicios-js.html</strong>.<br>
+      2. Para cada exercício, crie um arquivo <strong>.js</strong> separado ou utilize o console do navegador (F12 → Console).<br>
+      3. Escreva, teste e corrija seus códigos localmente.<br>
+      4. Use os botões abaixo para <strong>filtrar</strong> exercícios e marcar o que já foi feito.
+      Seu progresso é salvo apenas neste navegador (localStorage).
+    </p>
+  </div>
+
+  <div class="search-box">
+    <input id="campoBusca" type="text" placeholder="Filtrar exercícios por palavra-chave (ex: array, while, if)...">
+    <span class="search-info" id="infoBusca">Mostrando todos os 20 exercícios.</span>
+  </div>
+
+  <h2>Exercícios</h2>
+  <ol id="listaExercicios">
+    <li class="exercicio" data-id="1">
+      Crie um programa que verifique se uma pessoa é <strong>maior</strong> ou <strong>menor de idade</strong>, 
+      com base no valor de uma variável <code>idade</code>, e exiba a mensagem correspondente no console.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 1)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="2">
+      Escreva um script que classifique uma nota armazenada em <code>nota</code>:
+      <ul>
+        <li><code>&gt;= 7</code>: exibir "Aprovado"</li>
+        <li><code>&gt;= 5</code> e <code>&lt; 7</code>: exibir "Recuperação"</li>
+        <li><code>&lt; 5</code>: exibir "Reprovado"</li>
+      </ul>
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 2)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="3">
+      Crie um programa que receba (via variável) um número de <strong>1 a 7</strong> e exiba o
+      dia da semana correspondente usando <code>switch</code>.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 3)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="4">
+      Crie um programa que verifique se um número armazenado em <code>num</code> é
+      <strong>par</strong> ou <strong>ímpar</strong>, exibindo o resultado no console.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 4)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="5">
+      Imprima no console os números de <strong>1 a 10</strong> utilizando a estrutura de repetição <code>for</code>.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 5)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="6">
+      Usando a estrutura <code>while</code>, some todos os números de <strong>1 a 100</strong> e exiba o resultado
+      final no console.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 6)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="7">
+      Exiba uma mensagem (por exemplo, <em>"Estudando JavaScript"</em>) <strong>5 vezes</strong> utilizando
+      a estrutura <code>do...while</code>.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 7)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="8">
+      Crie um array contendo 3 frutas (strings) e exiba a <strong>segunda fruta</strong> no console.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 8)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="9">
+      Dado um array de nomes, percorra o array utilizando <code>for</code> e exiba cada nome no console em uma linha.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 9)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="10">
+      Crie um array vazio chamado <code>alunos</code>. Adicione 3 nomes utilizando o método <code>push()</code>
+      e exiba o array completo no console.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 10)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="11">
+      Dado o array <code>[10, 20, 30, 40]</code>, remova o último elemento usando <code>pop()</code> e exiba o array atualizado.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 11)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="12">
+      Dado o array <code>["João", "Maria", "Pedro"]</code>, remova o primeiro elemento utilizando <code>shift()</code>
+      e exiba o array atualizado.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 12)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="13">
+      Crie um array com alguns nomes. Verifique se um nome específico está presente no array e exiba no console:
+      <strong>"Encontrado"</strong> ou <strong>"Não encontrado"</strong>.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 13)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="14">
+      Dado um array de números inteiros, crie um programa que conte quantos números são pares
+      e exiba essa quantidade no console.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 14)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="15">
+      Escreva um programa que mostre a <strong>tabuada</strong> de um número armazenado em uma variável,
+      de 1 até 10, usando <code>for</code>.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 15)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="16">
+      Dado um array de valores numéricos, crie um programa que encontre e exiba o
+      <strong>maior número</strong> presente no array.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 16)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="17">
+      Dado um array numérico, crie um programa que calcule a <strong>soma de todos os elementos</strong>
+      e exiba o resultado no console.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 17)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="18">
+      Crie uma variável <code>tipoUsuario</code> que pode assumir os valores
+      <code>"admin"</code>, <code>"aluno"</code> ou outro texto qualquer.
+      Utilize <code>switch</code> para exibir:
+      "Acesso total", "Acesso limitado" ou "Tipo desconhecido".
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 18)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="19">
+      Dado um array de números, exiba apenas os números <strong>maiores que 10</strong> no console,
+      utilizando uma estrutura de repetição e condição.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 19)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+
+    <li class="exercicio" data-id="20">
+      Crie um array com nomes de alunos. Em seguida, percorra o array e exiba no console
+      o índice e o nome, no formato: <code>Índice 0: Ana</code>.
+      <div class="actions">
+        <button class="btn-mini" type="button" onclick="toggleConcluido(this, 20)">Marcar como concluído</button>
+        <span class="status-label"></span>
+      </div>
+    </li>
+  </ol>
+</main>
+
+<footer>
+  Desenvolvido para prática da disciplina de Desenvolvimento Web em JavaScript.
+</footer>
+
+</body>
+</html>
